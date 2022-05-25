@@ -4,20 +4,23 @@
  * @return {number}
  */
 var findMaxAverage = function(nums, k) {
-    if (k <= nums.length){
-      const sumsArr = [];
-      for (let i =0; i < nums.length - k + 1; i++){
-        let sum = 0;
-        for (let j = i; j < i + k; j++){
-          sum+=nums[j];
-                    
-        }
-          sumsArr.push(sum/k);
-      }
-        sumsArr.sort(function (a, b) {
-          return b - a;});
-          
-      return sumsArr[0];
-          
-    }
+  if(nums.length === 1){
+    return nums[0];
+  }
+  let maxSum = - Infinity;
+  let start = 0;
+  let sum = 0;
+  
+  for (let end = 0; end < nums.length; end++){
+    sum +=nums[end];
+    if(end >= k - 1){   
+      maxSum = Math.max(sum/k, maxSum);
+      sum = sum - nums[start];
+      start = start + 1;
+    } 
+    
+  }
+  return maxSum;
+  
+  
 };
