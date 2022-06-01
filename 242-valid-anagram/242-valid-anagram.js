@@ -18,11 +18,9 @@ let arr2 = t.split('');
     
   arr1.sort();
   arr2.sort();
-  console.log(arr1);
-console.log(arr2);
      
   if(arr1.length !== arr2.length) {
-return false; 
+    return false; 
   }
      for(let i =0; i < arr1.length; i++){
        if (arr1[i] !== arr2[i]){
@@ -32,6 +30,5 @@ return false;
      }
      
   return true;
-
     
 };
