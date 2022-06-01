@@ -9,7 +9,7 @@ var isPalindrome = function(s) {
   if(string.length === 1){
     return true;
   } else if (string.length === 2){
-    console.log('two');
+  
     return string[0] === string[1];
   }
   
@@ -21,9 +21,7 @@ var isPalindrome = function(s) {
     stack.push(string[i]);
   }
     
-  console.log('stack', stack);
   for(let i = Math.floor(string.length/2); i < string.length; i++){
-    console.log('string[i]', string[i]);
     if (stack[stack.length - 1] === string[i]){
       stack.pop();
     }
