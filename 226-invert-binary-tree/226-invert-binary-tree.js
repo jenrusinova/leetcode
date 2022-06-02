@@ -33,19 +33,19 @@ var invertTree = function(root) {
     //take the most left node
    let node = queue.shift();
     
-     //if (!node) continue;
+  //swapping its left and right
   [node.left, node.right] = [node.right, node.left];
+    
+    //now we need to put at the right side of the queue this swapped children if they exists
     if(node.left){
       queue.push(node.left);
     }
     if(node.right){
     queue.push(node.right);
     }
-  
-  
+    
   }
-  
+  //now queue is empty and we can return the root of inverted tree
   return root;
-  
-  
+    
 };
