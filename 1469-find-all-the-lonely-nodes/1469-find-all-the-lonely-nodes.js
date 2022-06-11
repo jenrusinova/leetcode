@@ -22,19 +22,14 @@ var getLonelyNodes = function(root) {
     while (stack.length){
       let current = stack.pop();
       if(current !== null){
-             console.log(current.val);
+         console.log(current.val);
       
         if (current.left === null && current.right !== null){
           result.push(current.right.val);
         } else if (current.left !== null && current.right === null){
            result.push(current.left.val);
-        }
-        
-        
-        
-        
-        
-        
+        }      
+                   
       stack.push(current.left);
       stack.push(current.right);
       }
