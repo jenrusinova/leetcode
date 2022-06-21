@@ -22,6 +22,7 @@ var getTargetCopy = function(original, cloned, target) {
   stack.push(cloned);
   
   while(stack.length){
+    
     let current = stack.pop();
 
       if (current!= null) {
