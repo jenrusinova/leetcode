@@ -45,10 +45,7 @@ var smallestDivisor = function(nums, threshold) {
          lowIndex = currMiddleIndex + 1;
        } else if (currentSum <= threshold) {
           highIndex = currMiddleIndex - 1;
-         
-        } else {
-            return middle;
-        }
+       }
        if (currentSum <= threshold){
       middle = Math.min(middle, currMiddleIndex);
        }
