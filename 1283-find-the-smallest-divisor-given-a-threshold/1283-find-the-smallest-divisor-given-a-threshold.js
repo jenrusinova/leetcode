@@ -39,24 +39,18 @@ var smallestDivisor = function(nums, threshold) {
   
     while (lowIndex <=highIndex){
 
-      console.log(lowIndex, highIndex);
       let currMiddleIndex = Math.floor((lowIndex + highIndex)/2);
-      console.log('curr middle', currMiddleIndex);
       let currentSum = receiveSum(nums, currMiddleIndex);
-      console.log('currentSum', currentSum);
       if(currentSum > threshold){
-         console.log('move right');
          lowIndex = currMiddleIndex + 1;
        } else if (currentSum <= threshold) {
-          console.log('move left');
           highIndex = currMiddleIndex - 1;
-          //lowIndex = currMiddleIndex + 1;
+         
         } else {
             return middle;
         }
        if (currentSum <= threshold){
       middle = Math.min(middle, currMiddleIndex);
-      console.log('divisor to return', middle);
        }
     }//end of while
     
