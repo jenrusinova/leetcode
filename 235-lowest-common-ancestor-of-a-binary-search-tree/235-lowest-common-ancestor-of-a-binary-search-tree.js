@@ -20,7 +20,7 @@ var lowestCommonAncestor = function(root, p, q) {
   let queue = [];
   queue.push(root);
   
-    while( queue[0] ) {
+    while( queue.length ) {
     root = queue.shift();
     
     if( p.val < root.val && q.val < root.val )
