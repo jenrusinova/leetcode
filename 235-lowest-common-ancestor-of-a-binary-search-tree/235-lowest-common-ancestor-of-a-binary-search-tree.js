@@ -28,9 +28,8 @@ var lowestCommonAncestor = function(root, p, q) {
     else if( p.val > root.val && q.val > root.val )
         queue.push(root.right)
     else
-        break
+        return root;
         
 }
 
-return root
 };
