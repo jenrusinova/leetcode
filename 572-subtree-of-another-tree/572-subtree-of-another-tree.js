@@ -30,13 +30,10 @@ var isSubtree = function(root, subRoot) {
        let current1 = queue1.shift();
        let current2 = queue2.shift();
       
-      //console.log('current1=', current1);
-      //console.log('current2=', current2);
       
       if (current1 !== null && current2 !== null){
      
         if (current1.val !== current2.val){
-          console.log('59');
           isSame = false;
         }
         queue1.push(current1.left);
@@ -52,24 +49,23 @@ var isSubtree = function(root, subRoot) {
         isSame = false;
       }
     }
-    //console.log('isSame=', isSame);
     return isSame;
     
   }
-  
-  
+   
   
    let queue = [];
    queue.push(root);
   while (queue.length){
     let current = queue.shift();
-    
+    if (current!== null){
        if(current.val === subRoot.val){
 console.log(current.val);
         if(isSame(current, subRoot)) return true;
        } 
-      if(current.left) queue.push(current.left);
-      if(current.right)queue.push(current.right);
+      queue.push(current.left);
+     queue.push(current.right);
+    }
     
   }
   
