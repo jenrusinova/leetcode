@@ -3,14 +3,7 @@
  * @return {number}
  */
 var fib = function(n) {
-    if (n === 0){
-       return 0;
-    }
-  
-   if (n === 1){
-      return 1;
-   }
-  
+   
   let arr = [];
   arr[0] = 0;
   arr[1] = 1
