@@ -4,13 +4,16 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-  var obj = {};
-    for(var i =0; i < nums.length; i++){
-      var diff = target - nums[i];
-      for(var key in obj){
-        if (obj[key] === diff){
-          return [key, i]}
+    let obj = {};
+  
+  for(let i =0; i < nums.length; i++){
+    let diff = target - nums[i];
+    for (let key in obj){
+      if (obj[key] === diff){
+        return [i, key];
       }
-      obj[i] = nums[i]
     }
+    obj[i] = nums[i];
+  }
+  return [];
 };
