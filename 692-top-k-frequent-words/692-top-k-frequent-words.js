@@ -10,13 +10,14 @@ var topKFrequent = function(words, k) {
   }
   
   let obj = {};
+  //O(n)
   for(let i =0; i < words.length; i++){
     let word = words[i];
     if(obj[word] === undefined){
       obj[word] = 1;
     } else obj[word]++;    
   }
-  
+  //O(n log(n))
   let sorted = Object.keys(obj).sort(function(a, b)  {
     
   if (obj[b] > obj[a]) return 1;
@@ -27,6 +28,8 @@ var topKFrequent = function(words, k) {
     }
   
   });
-  console.log(sorted);
+  //console.log(sorted);
   return sorted.splice(0, k);
 };
+
+//Time complexity is O(n log(n))
