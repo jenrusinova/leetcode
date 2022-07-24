@@ -12,13 +12,23 @@
  */
 var maxDepth = function(root) {
     
-    if (root === null){
-        return 0;
+if (!root) return 0;
+  
+  let queue = [root];
+  let depth = 0;
+  
+  while (queue.length){
+     let l = queue.length;
+    
+    for(let i =0; i < l; i++){
+      let current = queue.shift();
+      
+      if(current.left) queue.push (current.left);
+      if(current.right) queue.push(current.right);
+      
     }
-    
-    var left = maxDepth(root.left);
-    var right = maxDepth(root.right);
-    
-    return Math.max(right, left) + 1;
+    depth++;
+  }
+  return depth;
     
 };
