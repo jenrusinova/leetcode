@@ -3,7 +3,7 @@
  * @return {number}
  */
 var numIslands = function(grid) {
-  if (!grid.length){
+     if (!grid.length){
     return 0;
   }
   
@@ -37,5 +37,4 @@ var numIslands = function(grid) {
   }
   
   return counter;   
-    
 };
