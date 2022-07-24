@@ -10,28 +10,20 @@
  * @return {ListNode}
  */
 var reverseList = function(head) {
+    if (head  === null) return null;
   
-  //create 2 pointers
-    let prev = null;
-    let curr = head;
+   let previous = null
+   let current = head;
   
+    while (current){
+      //save the next pointer
+      let next = current.next;
+      
+       current.next = previous;
+       previous = current;
+      current = next;
+    }
   
-  while(curr){
-  //save the next pointer    
-    let next = curr.next;
-    
-    //reverse the direvction    
-    curr.next = prev;
-    
-    //move 2 pointers to the right
-    prev = curr;
-    curr = next;
-    
-}
-  
-  return prev;
-  
-  
-    
+  return previous;
   
 };
