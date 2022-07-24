@@ -11,11 +11,10 @@
  * @return {ListNode}
  */
 var mergeTwoLists = function(list1, list2) {
-    let headNode = new ListNode (-1, null);
+  let headNode = new ListNode (-1, null);
   let current = headNode;
   
   while (list1 && list2){
- 
     
     if (list1.val <= list2.val){
       current.next = list1;
@@ -26,13 +25,13 @@ var mergeTwoLists = function(list1, list2) {
     }
     current = current.next;
   }
-  
+  //if we reached till end of one of the lists
   if (list1){
     current.next = list1;
   } else
     current.next = list2;
   
-  return headNode.next;
-  
-  
+  return headNode.next;   
 };
+
+//Time complexity O(n)
