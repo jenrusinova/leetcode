@@ -6,8 +6,8 @@
 var threeSumClosest = function(nums, target) {
   
   nums.sort((a, b)=> a - b);
-  let currDiff = 0;
-  let minDiff = Infinity;
+  let closestSum = 0;
+  let currMinDiff = Infinity;
   
   for (let i =0; i < nums.length - 2; i++){
     let left = i + 1;
@@ -16,12 +16,12 @@ var threeSumClosest = function(nums, target) {
     //check the sum and difference
     while (left < right){
       let sum = nums[i] + nums[left]+nums[right];
-      let currDiff = Math.abs(target - sum);
+      let diff = Math.abs(target - sum);
       
-       if (currDiff < Math.abs(target - minDiff)){
-         minDiff = sum;
-       }
-      
+      if (diff < currMinDiff){
+        currMinDiff = diff;
+        closestSum = sum; 
+      }
       
       if (sum > target){
         right--;
@@ -30,6 +30,6 @@ var threeSumClosest = function(nums, target) {
       }
     }
   }
-  return minDiff;
+  return closestSum;
   
 };
