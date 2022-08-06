@@ -3,35 +3,26 @@
  * @return {boolean}
  */
 var isValid = function(s) {
+    if (s.length === 0) return false;
+  
     let stack = [];
   
-  
-  for (let i =0; i < s.length; i++){
-  
-    if(s[i] === '(' || s[i] === '[' || s[i] === '{'){
-    stack.push(s[i]);
-    } else if (stack.length === 0 || stack.pop()!== foundPair(s[i])){
-return false;
-    }
+  function findPair(bracket){
+    if (bracket === ']') return '[';
+    if (bracket === ')') return '(';
+    if (bracket === '}') return '{';
 
-    
-  
+
   }
   
+ for (let i =0; i < s.length; i++){
+   let char = s[i];
+   if (char === '{' || char === '[' || char === '('){
+     stack.push(char);
+   }else if (stack.length === 0 || stack.pop() !== findPair(char)){
+      return false;     
+ }
+  
+ }
   return stack.length === 0;
-  
-
-  function foundPair(ch){
-  if(ch === ')'){
-    return '(';
-  }
-    
-  if(ch === ']') {
-  return '[' 
-  } 
-    
-    return '{'
-    
-  }
-
 };
